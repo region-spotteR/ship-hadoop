@@ -27,7 +27,8 @@ RUN mkdir -p ~/logs ~/data ~/data/nameNode ~/data/dataNode \
 
 ENV HADOOP_HOME=/opt/hadoop-${HADOOP_VERSION} \
     HADOOP_OS_TYPE=Linux \
-    HADOOP_CONF_DIR=/etc/hadoop \
-    PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+    HADOOP_CONF_DIR=/etc/hadoop
 
-COPY --chown=hadoop:hadoop config/*.xml  /etc/hadoop/
+ENV PATH="${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin:/opt/spark-${SPARK_VERSION}-bin-without-hadoop/bin:${PATH}"
+
+COPY --chown=hadoop:hadoop hadoop/config/*.xml  /etc/hadoop/

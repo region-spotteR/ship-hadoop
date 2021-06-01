@@ -31,7 +31,7 @@ This repository consists of four parts:
 
 # Getting Started 
 
-1. First the create the hadoop base container: `docker build -f ./hadoop/base.dockerfile -t hadoop_base . `
+1. First the create the hadoop base container: `docker build -f ./hadoop/base.dockerfile -t hadoop_base . ` or type `sh start.sh` and the script guides you through the basic steps. Note that the second step is still advised since helps discovering errors if there are any. 
 2. Second run `docker-compose up -d`. If you want to see the log in your command line omit `-d`
 
 After initialisation (takes a few seconds) you should find the management view under `localhost:9870`.  
